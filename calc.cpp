@@ -29,7 +29,6 @@ std::vector<std::string> scanText(const std::string& text, const std::string& fi
         std::string word;
         while (lineStream >> word) { // Trenne die Zeile in Wörter
             for (const std::string& filterWord : filterWords) {
-				std::cout << "Filterword: " << filterWord << std::endl;
                 if (word == filterWord) {
 					std::cout << "Found word: " << word << std::endl;
                     foundWords.push_back(word);
@@ -70,8 +69,10 @@ int main() {
     std::vector<std::string> foundWords = scanText(text, filterWordsFile);
 
     if (foundWords.empty()) {
+		std::cout<<std::endl;
         std::cout << "Keine Wörter gefunden." << std::endl;
     } else {
+		std::cout<<std::endl;
         std::cout << "Gefundene Wörter:" << std::endl;
         for (const std::string& word : foundWords) {
             std::cout << word << std::endl;
